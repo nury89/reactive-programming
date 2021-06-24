@@ -22,7 +22,7 @@ import java.util.stream.LongStream;
  */
 public class EulerProblem20 {
 
-    Function<Long, BigDecimal> multiplyFactorial = number -> LongStream.range(1, number + 1).mapToObj(BigDecimal::valueOf)
+    Function<Long, BigDecimal> multiplyFactorial = number -> LongStream.range(1, number).mapToObj(BigDecimal::valueOf)
             .reduce(BigDecimal.valueOf(1), BigDecimal::multiply);
 
     Function<BigDecimal, List<Long>> listDigitsFactorial = number -> number.toString().chars().
